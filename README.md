@@ -1,2 +1,2 @@
-# kangaroo-api
-Kangaroo Rewards API
+# Kangaroo Rewards REST API SDK for PHP
+

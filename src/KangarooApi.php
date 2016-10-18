@@ -22,7 +22,7 @@ class KangarooApi
     /**
      * @var string
      */
-    private $userAgent = '';
+    private $userAgent = 'API Client/1.0';
 
     /**
      * Create a new controller instance.
@@ -37,6 +37,7 @@ class KangarooApi
 
         $this->token = $options['access_token'];
         $this->baseApiUrl = $options['base_api_url'];
+        $this->userAgent = $options['user_agent'];
     }
 
     /**
@@ -66,6 +67,16 @@ class KangarooApi
     public function getCustomer($id = null, $options = [])
     {
         $result = $this->request('GET', '/customers/' . $id, $options);
+        return $result['data'];
+    }
+
+    /**
+     * @param array $options
+     * @return mixed
+     */
+    public function getBranches($options = [])
+    {
+        $result = $this->request('GET', '/branches', $options);
         return $result['data'];
     }
 

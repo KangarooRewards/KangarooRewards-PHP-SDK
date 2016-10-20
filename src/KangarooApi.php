@@ -68,11 +68,33 @@ class KangarooApi
 
     /**
      * @param $id
+     * @param $options
      * @return mixed
      */
     public function getCustomer($id = null, $options = [])
     {
         $result = $this->request('GET', '/customers/' . $id, $options);
+        return $result['data'];
+    }
+
+    /**
+     * @param $payload
+     * @return mixed
+     */
+    public function createCustomer($data = [])
+    {
+        $result = $this->request('POST', '/customers', null, $data);
+        return $result['data'];
+    }
+
+    /**
+     * @param $id
+     * @param $options
+     * @return mixed
+     */
+    public function getCustomerTransactions($id = null, $options = [])
+    {
+        $result = $this->request('GET', '/customers/' . $id . '/transactions', $options);
         return $result['data'];
     }
 
@@ -125,15 +147,10 @@ class KangarooApi
 
         $http = new \GuzzleHttp\Client(['base_uri' => $this->getBaseApiUrl()]);
 
-        $response = $http->request($type, $path, ['headers' => $this->getHeaders()]);
-
-        // $httpCode = $response->getStatusCode();
-
-        // if ($httpCode > 400) {
-        //     $result = json_decode((string) $response->getBody());
-        //     $errorMessage = 'Error: ' . $result->error . ' path: ' . $path;
-        //     throw new \Exception($errorMessage, (int) $httpCode);
-        // }
+        $response = $http->request($type, $path, [
+            'headers' => $this->getHeaders(),
+            'json' => $data,
+        ]);
 
         $body = (string) $response->getBody();
         $r = json_decode($body, true);

@@ -71,7 +71,7 @@ class KangarooApi
      * @param $options
      * @return mixed
      */
-    public function getCustomer($id = null, $options = [])
+    public function getCustomer($id, $options = [])
     {
         $result = $this->request('GET', '/customers/' . $id, $options);
         return $result['data'];
@@ -84,6 +84,17 @@ class KangarooApi
     public function createCustomer($data = [])
     {
         $result = $this->request('POST', '/customers', null, $data);
+        return $result['data'];
+    }
+
+    /**
+     * @param $id
+     * @param $payload
+     * @return mixed
+     */
+    public function updateCustomer($id, $data = [])
+    {
+        $result = $this->request('PUT', '/customers/' . $id, null, $data);
         return $result['data'];
     }
 

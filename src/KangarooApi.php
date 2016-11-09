@@ -110,12 +110,43 @@ class KangarooApi
     }
 
     /**
+     * @param $id
+     * @param $options
+     * @return mixed
+     */
+    public function getCustomerNotifications($id = null, $options = [])
+    {
+        $result = $this->request('GET', '/customers/' . $id . '/notifications', $options);
+        return $result['data'];
+    }
+
+    /**
      * @param array $options
      * @return mixed
      */
     public function getBranches($options = [])
     {
         $result = $this->request('GET', '/branches', $options);
+        return $result['data'];
+    }
+
+    /**
+     * @param array $options
+     * @return mixed
+     */
+    public function getOffers($options = [])
+    {
+        $result = $this->request('GET', '/offers', $options);
+        return $result['data'];
+    }
+
+    /**
+     * @param array $options
+     * @return mixed
+     */
+    public function getProducts($options = [])
+    {
+        $result = $this->request('GET', '/products', $options);
         return $result['data'];
     }
 

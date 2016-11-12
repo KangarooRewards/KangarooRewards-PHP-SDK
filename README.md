@@ -25,16 +25,15 @@ Add the following to your `composer.json` file.
 ## Usage
 
 ```php
+$api = new KangarooApi([
+    'access_token' => {ACCESS_TOKEN},
+]);
 
-    $api = new KangarooApi([
-        'access_token' => {ACCESS_TOKEN},
-    ]);
+$resourceOwner = $api->me();
 
-    $resourceOwner = $api->me();
+$customer = $api->getCustomer({CUSTOMER_ID}, ['include' => ['balance']]); 
 
-    $customer = $api->getCustomer({CUSTOMER_ID}, ['include' => ['balance']]); 
-
-    $offers = $api->getOffers();
+$offers = $api->getOffers();
 
 ```
 

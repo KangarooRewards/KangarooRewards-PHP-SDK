@@ -36,11 +36,11 @@ class KangarooApi
         }
 
         $this->token = $options['access_token'];
-        
+
         if (!empty($options['base_api_url'])) {
             $this->baseApiUrl = $options['base_api_url'];
         }
-        
+
         if (!empty($options['user_agent'])) {
             $this->userAgent = $options['user_agent'];
         }
@@ -160,7 +160,7 @@ class KangarooApi
 
     /**
      *  Returns headers used for request
-     *  
+     *
      * @return array
      */
     protected function getHeaders()

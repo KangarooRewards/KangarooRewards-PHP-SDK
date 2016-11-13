@@ -1,7 +1,7 @@
 # Kangaroo Rewards REST API SDK for PHP
 
-[![Build Status](https://travis-ci.org/KangarooRewards/KangarooRewards-PHP-SDK.png?branch=master)](https://travis-ci.org/KangarooRewards/KangarooRewards-PHP-SDK)
-[![Latest Version](https://img.shields.io/github/release/KangarooRewards/KangarooRewards-PHP-SDK.svg?style=flat-square)](https://github.com/KangarooRewards/KangarooRewards-PHP-SDK/releases)
+[![Build Status](https://travis-ci.org/kangaroorewards/KangarooRewards-PHP-SDK.png?branch=master)](https://travis-ci.org/kangaroorewards/KangarooRewards-PHP-SDK)
+[![Latest Version](https://img.shields.io/github/release/kangaroorewards/KangarooRewards-PHP-SDK.svg?style=flat-square)](https://github.com/kangaroorewards/KangarooRewards-PHP-SDK/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
 ## Requirements

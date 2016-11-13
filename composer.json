@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "KangarooRewards\\Api\\": "src/"
+            "kangaroorewards\\Api\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "KangarooRewards\\Api\\Test\\": "tests/src/"
+            "kangaroorewards\\Api\\Test\\": "tests/src/"
         }
     },
     "extra": {

@@ -61,8 +61,7 @@ class KangarooApi
      */
     public function me($options = [])
     {
-        $result = $this->request('GET', '/me', $options);
-        return $result['data'];
+        return $this->request('GET', '/me', $options);
     }
 
     /**
@@ -71,8 +70,7 @@ class KangarooApi
      */
     public function getCustomers($options = [])
     {
-        $result = $this->request('GET', '/customers', $options);
-        return $result['data'];
+        return $this->request('GET', '/customers', $options);
     }
 
     /**
@@ -82,8 +80,7 @@ class KangarooApi
      */
     public function getCustomer($id, $options = [])
     {
-        $result = $this->request('GET', '/customers/' . $id, $options);
-        return $result['data'];
+        return $this->request('GET', '/customers/' . $id, $options);
     }
 
     /**
@@ -92,8 +89,7 @@ class KangarooApi
      */
     public function createCustomer($data = [])
     {
-        $result = $this->request('POST', '/customers', null, $data);
-        return $result['data'];
+        return $this->request('POST', '/customers', null, $data);
     }
 
     /**
@@ -103,8 +99,7 @@ class KangarooApi
      */
     public function updateCustomer($id, $data = [])
     {
-        $result = $this->request('PUT', '/customers/' . $id, null, $data);
-        return $result['data'];
+        return $this->request('PUT', '/customers/' . $id, null, $data);
     }
 
     /**
@@ -114,8 +109,7 @@ class KangarooApi
      */
     public function getCustomerTransactions($id = null, $options = [])
     {
-        $result = $this->request('GET', '/customers/' . $id . '/transactions', $options);
-        return $result['data'];
+        return $this->request('GET', '/customers/' . $id . '/transactions', $options);
     }
 
     /**
@@ -125,8 +119,7 @@ class KangarooApi
      */
     public function getCustomerNotifications($id = null, $options = [])
     {
-        $result = $this->request('GET', '/customers/' . $id . '/notifications', $options);
-        return $result['data'];
+        return $this->request('GET', '/customers/' . $id . '/notifications', $options);
     }
 
     /**
@@ -135,8 +128,7 @@ class KangarooApi
      */
     public function getBranches($options = [])
     {
-        $result = $this->request('GET', '/branches', $options);
-        return $result['data'];
+        return $this->request('GET', '/branches', $options);
     }
 
     /**
@@ -145,8 +137,7 @@ class KangarooApi
      */
     public function getOffers($options = [])
     {
-        $result = $this->request('GET', '/offers', $options);
-        return $result['data'];
+        return $this->request('GET', '/offers', $options);
     }
 
     /**
@@ -155,8 +146,7 @@ class KangarooApi
      */
     public function getProducts($options = [])
     {
-        $result = $this->request('GET', '/products', $options);
-        return $result['data'];
+        return $this->request('GET', '/products', $options);
     }
 
     /**
@@ -198,10 +188,16 @@ class KangarooApi
 
         $http = new \GuzzleHttp\Client(['base_uri' => $this->getBaseApiUrl()]);
 
-        $response = $http->request($type, $path, [
-            'headers' => $this->getHeaders(),
-            'json' => $data,
-        ]);
+        if ($data) {
+            $response = $http->request($type, $path, [
+                'headers' => $this->getHeaders(),
+                'json' => $data,
+            ]);
+        } else {
+            $response = $http->request($type, $path, [
+                'headers' => $this->getHeaders(),
+            ]);
+        }
 
         $body = (string) $response->getBody();
         $r = json_decode($body, true);

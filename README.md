@@ -1,4 +1,4 @@
-# Kangaroo Rewards REST API SDK for PHP
+# Kangaroo Rewards REST API Client for PHP
 
 [![Build Status](https://travis-ci.org/kangaroorewards/KangarooRewards-PHP-SDK.png?branch=master)](https://travis-ci.org/kangaroorewards/KangarooRewards-PHP-SDK)
 [![Latest Version](https://img.shields.io/github/release/kangaroorewards/KangarooRewards-PHP-SDK.svg?style=flat-square)](https://github.com/kangaroorewards/KangarooRewards-PHP-SDK/releases)
